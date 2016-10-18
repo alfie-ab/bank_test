@@ -14,7 +14,6 @@ class BankHistory
     @current_transaction = nil
   end
 
-  #Need to refactor deposit + withdraw so that it only does one thing
   def deposit(amount)
     @current_transaction = @credit_class.new(amount)
     @transaction_history << @current_transaction
