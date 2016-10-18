@@ -23,7 +23,7 @@ class Bank
 
   def print
     puts "date       || credit || debit || balance"
-    @log.transaction_history.each {|a| puts a.transaction}
+    @log.transaction_history.each {|a| puts a.transaction + "  || " + @balance.to_s}
   end
 
   # Could make a private method "dedeuct" which subtracts the right amount from the bank
