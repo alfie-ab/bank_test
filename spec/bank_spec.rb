@@ -7,8 +7,8 @@ describe Bank do
   end
 
   it "allows user to make a deposit" do
-    subject.deposit(1000)
-    expect(subject.balance).to eq(1000)
+    subject.withdraw(1000)
+    expect(subject.balance).to eq(-1000)
   end
 
 end
