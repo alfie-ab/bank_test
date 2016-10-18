@@ -13,10 +13,12 @@ class Bank
 
   def deposit(amount)
     @log.deposit(amount)
+    @balance += amount
   end
 
   def withdraw(amount)
     @log.withdraw(amount)
+    @balance -= amount
   end
 
   # Could make a private method "dedeuct" which subtracts the right amount from the bank

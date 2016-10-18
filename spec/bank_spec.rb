@@ -3,7 +3,7 @@ require 'bank'
 describe Bank do
 
   let(:bankhistory_class) {double :bankhistory_class, new: bankhistory}
-  let(:bankhistory) {double :bankhistory}
+  let(:bankhistory) {double :bankhistory, deposit: nil, withdraw: nil}
 
   subject(:bank) {described_class.new(bankhistory)}
 
@@ -14,5 +14,15 @@ describe Bank do
   it "creates a bank history when intiated" do
     expect(bank.log).to eq(bankhistory)
   end
+
+  it "allows user to make a withdrawal" do
+   subject.withdraw(1000)
+   expect(subject.balance).to eq(-1000)
+ end
+
+ it "allows user to make a deposit" do
+   subject.deposit(1000)
+   expect(subject.balance).to eq(1000)
+ end
 
 end
