@@ -10,17 +10,17 @@ describe BankHistory do
   subject(:bankhistory) {described_class.new(credit_class, debit_class)}
 
   it "should add the current transaction to transaction history" do
-    bankhistory.deposit(1000)
+    bankhistory.deposit(1000, 1000)
     expect(bankhistory.transaction_history).to eq([credit])
   end
 
   it "should add the current transaction to transaction history" do
-    bankhistory.withdraw(1000)
+    bankhistory.withdraw(1000, 1000)
     expect(bankhistory.transaction_history).to eq([debit])
   end
 
   it "current transaction should reset after adding itself to transaction history" do
-    bankhistory.deposit(1000)
+    bankhistory.deposit(1000, 1000)
     expect(bankhistory.instance_variable_get(:@current_transaction)).to eq(nil)
   end
 

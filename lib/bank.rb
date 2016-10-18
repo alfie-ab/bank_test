@@ -12,20 +12,18 @@ class Bank
   end
 
   def deposit(amount)
-    @log.deposit(amount)
     @balance += amount
+    @log.deposit(amount, @balance)
   end
 
   def withdraw(amount)
-    @log.withdraw(amount)
     @balance -= amount
+    @log.withdraw(amount, @balance)
   end
 
   def print
     puts "date       || credit || debit || balance"
-    @log.transaction_history.each {|a| puts a.transaction + "  || " + @balance.to_s}
+    @log.transaction_history.each {|a| puts a.transaction}
   end
-
-  # Could make a private method "dedeuct" which subtracts the right amount from the bank
 
 end

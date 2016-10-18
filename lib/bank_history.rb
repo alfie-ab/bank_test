@@ -14,14 +14,14 @@ class BankHistory
     @current_transaction = nil
   end
 
-  def deposit(amount)
-    @current_transaction = @credit_class.new(amount)
+  def deposit(amount, balance)
+    @current_transaction = @credit_class.new(amount, balance)
     @transaction_history << @current_transaction
     @current_transaction = nil
   end
 
-  def withdraw(amount)
-    @current_transaction = @debit_class.new(amount)
+  def withdraw(amount, balance)
+    @current_transaction = @debit_class.new(amount, balance)
     @transaction_history << @current_transaction
     @current_transaction = nil
   end
