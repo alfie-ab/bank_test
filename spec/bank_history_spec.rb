@@ -12,4 +12,9 @@ describe BankHistory do
     expect(bankhistory.instance_variable_get(:@current_transaction)).not_to be_nil
   end
 
+  it "should keep a log what transations have occured" do
+    bankhistory.create(1000)
+    expect(bankhistory.instance_variable_get(:@transaction_history)).not_to be_nil
+  end
+
 end

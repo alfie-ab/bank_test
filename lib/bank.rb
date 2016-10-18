@@ -1,5 +1,7 @@
 #Understand the current amount of money in an account
 
+require_relative 'bank_history'
+
 class Bank
 
   attr_reader :balance
