@@ -8,4 +8,8 @@ describe Debit do
     expect(debit.transaction).to eq(1000)
   end
 
+  it "should record the date the withdrawl was made" do
+    expect(debit.date).to eq("18/10/2016")
+  end
+
 end
