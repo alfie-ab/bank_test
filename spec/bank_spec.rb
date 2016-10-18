@@ -25,4 +25,10 @@ describe Bank do
    expect(subject.balance).to eq(1000)
  end
 
+ xit "shows user a printed bank statement" do
+   subject.deposit(1000)
+   subject.withdraw(1000)
+   expect(subject.print_balance).to eq("date       || credit || debit || balance")
+ end
+
 end

@@ -21,7 +21,7 @@ class Bank
     @log.withdraw(amount, @balance)
   end
 
-  def print
+  def print_balance
     puts "date       || credit || debit || balance"
     @log.transaction_history.each {|a| puts a.transaction}
   end
