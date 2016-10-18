@@ -8,7 +8,7 @@ describe Bank do
   subject(:bank) {described_class.new(bankhistory)}
 
   it "allows user to check balance" do
-    expect(bank.balance).to eq(0)
+    expect(bank.instance_variable_get(:@balance)).to eq(0)
   end
 
   it "creates a bank history when intiated" do
@@ -17,12 +17,12 @@ describe Bank do
 
   it "allows user to make a withdrawal" do
    subject.withdraw(1000)
-   expect(subject.balance).to eq(-1000)
+   expect(subject.instance_variable_get(:@balance)).to eq(-1000)
  end
 
  it "allows user to make a deposit" do
    subject.deposit(1000)
-   expect(subject.balance).to eq(1000)
+   expect(subject.instance_variable_get(:@balance)).to eq(1000)
  end
 
  xit "shows user a printed bank statement" do

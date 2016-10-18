@@ -1,10 +1,8 @@
-#Understand the current amount of money in an account
+#Understand the current amount of money in an account and prints statement
 
 require_relative 'bank_history'
 
 class Bank
-
-  attr_reader :balance
 
   def initialize(log = BankHistory.new)
     @balance = 0
