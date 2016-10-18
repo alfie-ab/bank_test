@@ -4,11 +4,10 @@ require 'date'
 
 class Credit
 
-  attr_reader :transaction, :date
+  attr_reader :transaction
 
   def initialize(amount)
-    @transaction = amount
-    @date = Time.now.strftime("%d/%m/%Y")
+    @transaction = Time.now.strftime("%d/%m/%Y") + " || " + amount.to_s 
   end
 
 end

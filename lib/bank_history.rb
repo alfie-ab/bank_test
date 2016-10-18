@@ -5,7 +5,7 @@ require_relative 'debit'
 
 class BankHistory
 
-  attr_reader :transaction_history
+  attr_reader :transaction_history, :credit_class, :debit_class
 
   def initialize(credit_class = Credit, debit_class = Debit)
     @credit_class = credit_class

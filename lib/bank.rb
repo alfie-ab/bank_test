@@ -21,6 +21,11 @@ class Bank
     @balance -= amount
   end
 
+  def print
+    puts "date       || credit || debit || balance"
+    puts @log.transaction_history.pop.transaction + "  || " + @balance.to_s
+  end
+
   # Could make a private method "dedeuct" which subtracts the right amount from the bank
 
 end
