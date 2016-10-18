@@ -12,7 +12,7 @@ describe Bank do
   end
 
   it "creates a bank history when intiated" do
-    expect(bank.log).to eq(bankhistory)
+    expect(bank.instance_variable_get(:@log)).to eq(bankhistory)
   end
 
   it "allows user to make a withdrawal" do

@@ -4,7 +4,7 @@ require_relative 'bank_history'
 
 class Bank
 
-  attr_reader :balance, :log
+  attr_reader :balance
 
   def initialize(log = BankHistory.new)
     @balance = 0
