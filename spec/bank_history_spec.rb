@@ -2,19 +2,24 @@ require 'bank_history'
 
 describe BankHistory do
 
-  let(:transaction_class) {double(:transaction_class, new: transaction)}
-  let(:transaction) {double(:transaction)}
+  let(:credit_class) {double(:credit_class, new: credit)}
+  let(:debit_class) {double(:debit_class, new: debit)}
+  let(:credit) {double(:credit)}
+  let(:debit) {double(:debit)}
 
-  subject(:bankhistory) {described_class.new(transaction_class)}
+  subject(:bankhistory1) {described_class.new(credit_class)}
+  subject(:bankhistory2) {described_class.new(debit_class)}
 
-  it "should be able to create a new instance of transaction" do
-    bankhistory.create(1000)
-    expect(bankhistory.instance_variable_get(:@current_transaction)).not_to be_nil
+  it "should be able to create a new instance of credit" do
+    bankhistory1.deposit(1000)
+    expect(bankhistory1.instance_variable_get(:@current_transaction)).not_to be_nil
   end
 
-  it "should keep a log what transations have occured" do
-    bankhistory.create(1000)
-    expect(bankhistory.instance_variable_get(:@transaction_history)).not_to be_nil
+
+  it "should be able to create a new instance of debit" do
+    bankhistory2.withdraw(1000)
+    expect(bankhistory2.instance_variable_get(:@current_transaction)).not_to be_nil
   end
+
 
 end

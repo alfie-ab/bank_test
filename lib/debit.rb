@@ -2,7 +2,7 @@ class Debit
 
   attr_reader :transaction
 
-  def initialize
+  def initialize(amount)
     @transaction = 0
   end
 
