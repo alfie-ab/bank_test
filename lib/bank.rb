@@ -1,3 +1,5 @@
+#Understand the current amount of money in an account
+
 class Bank
 
   attr_reader :balance
