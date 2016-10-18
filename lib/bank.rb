@@ -4,18 +4,19 @@ require_relative 'bank_history'
 
 class Bank
 
-  attr_reader :balance
+  attr_reader :balance, :log
 
-  def initialize
+  def initialize(log = BankHistory.new)
     @balance = 0
-  end
-
-  def withdraw(amount)
-    @balance -= amount
+    @log = log
   end
 
   def deposit(amount)
-    @balance += amount
+    @log.deposit(amount)
+  end
+
+  def withdraw(amount)
+    @log.withdraw(amount)
   end
 
   # Could make a private method "dedeuct" which subtracts the right amount from the bank

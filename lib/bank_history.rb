@@ -1,3 +1,5 @@
+#Understand how to keep a log of every transaction
+
 require_relative 'credit'
 require_relative 'debit'
 

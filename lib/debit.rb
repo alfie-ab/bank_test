@@ -1,9 +1,11 @@
+#Understand how to subtract money from an account
+
 class Debit
 
   attr_reader :transaction
 
   def initialize(amount)
-    @transaction = 0
+    @transaction = amount
   end
 
 end
